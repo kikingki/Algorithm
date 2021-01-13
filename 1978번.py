@@ -1,4 +1,4 @@
-import sys
+import sys, math
 input = sys.stdin.readline
 
 def prime_list(m):
