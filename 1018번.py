@@ -27,8 +27,8 @@ for i in range(m-7):
                         count_b += 1
                     else:
                         count_w += 1
-        count_list.append(count_b)
-        count_list.append(count_w)
+        count_list.append(count_b)  #B로 시작했을 때 칠해야 하는 수
+        count_list.append(count_w)  #W로 시작했을 때 칠해야 하는 수
 
 #가장 최솟값 출력
 print(min(count_list))
