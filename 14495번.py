@@ -6,15 +6,13 @@
 
 # 시도2 - 반복문의 경우 시간복잡도 O(n)
 def fibonacci_iter(f, n):
-    for i in range(n+1):
-        # f(1) = f(2) = f(3) = 1
-        if i >= 4:
-            f[i] = f[i-1] + f[i-3]
+    for i in range(4, n):
+        f[i] = f[i-1] + f[i-3]
 
     return f
 
 n = int(input())
 f = [1 for _ in range(n+1)]
-fibonacci_iter(f, n)
+fibonacci_iter(f, n+1)
 # 리스트의 가장 끝 요소 출력
 print(f[-1])
