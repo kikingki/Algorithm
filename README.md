@@ -119,3 +119,7 @@
     ```
     dp[n] = max(dp[n-2] + stair[i], dp[n-3] + stair[i] + stair[i-1])
     ```
+
+#### 21.2.17
+  + #### [BOJ 1874](../master/1874번.py)
+    임의의 수열이 주어졌을 때 스택을 이용해 그 수열을 만들 수 있는지 판단하고, 가능할 경우 push와 pop 연산 순서를 출력하는 문제. while문을 이용해 입력받은 num 값과 count 값이 같을 때까지 stack에 push하고 count를 1씩 더해준다. 반복이 끝나면 stack의 마지막 값과 num의 값을 비교해 동일할 경우 stack을 pop한다. 동일하지 않을 경우 입력된 수열을 만드는 것이 불가능하므로 가능 여부를 나타내는 temp 변수를 False로 선언한 후 break로 반복을 끝낸다. temp가 False이면 NO를 출력하고, 아니면 push와 pop 연산 순서를 담은 result 리스트를 출력한다.
