@@ -123,3 +123,18 @@
 #### 21.2.17
   + #### [BOJ 1874](../master/1874번.py)
     임의의 수열이 주어졌을 때 스택을 이용해 그 수열을 만들 수 있는지 판단하고, 가능할 경우 push와 pop 연산 순서를 출력하는 문제. while문을 이용해 입력받은 num 값과 count 값이 같을 때까지 stack에 push하고 count를 1씩 더해준다. 반복이 끝나면 stack의 마지막 값과 num의 값을 비교해 동일할 경우 stack을 pop한다. 동일하지 않을 경우 입력된 수열을 만드는 것이 불가능하므로 가능 여부를 나타내는 temp 변수를 False로 선언한 후 break로 반복을 끝낸다. temp가 False이면 NO를 출력하고, 아니면 push와 pop 연산 순서를 담은 result 리스트를 출력한다.
+
+#### 21.2.18
+  + #### [BOJ 15649](../master/15649번.py)
+    자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 문제. 백트래킹(Backtracking) 알고리즘을 이용해 풀었다. 중복을 체크하는 리스트 visited와 수열을 담는 리스트 num_list를 선언했다. n까지 반복을 돌며 visited[i]가 True면 이미 탐색을 한 지점이므로 중복이다. 이 경우 continue로 다음 반복을 시작한다. 탐색을 하지 않은 경우, 탐색점 visited[i]를 true로 변경해 재귀로 dfs를 호출하며, 깊이가 m과 동일해졌을 때 num_list를 출력하고 함수를 즉시 종료한다. 탐색이 다 끝난 경우 순열 문제이므로 탐색점을 다시 False로 변경해주고 이전 연산의 요소를 제거한다.
+    + 백트래킹은 DFS 방식을 기반으로 하며, 불필요한 경우를 배제하며 원하는 답을 찾을 때까지 탐색하는 알고리즘이다. 불필요한 경우를 배재하는 '가지치기(Pruning)' 코드의 차이에 따라 속도 차이가 크다.
+    + 함수에서 return이 있는 경우와 return이 없는 경우 어떤 차이가 있는지 헷갈려서 구글링을 해봤다. no return & no result의 경우엔 code block을 모두 실행한 다음 None을 반환하고 종료하고, return (no result)의 경우엔 함수를 즉시 종료한다고 한다.그래서 이 문제의 경우 return을 넣지 않는 경우 불필요한 반복이 계속되므로 꼭 넣어줘야 한다.
+    + 파이썬의 내장함수 permutations를 사용해 순열을 찾는 방법도 있다.
+    ```python
+    from itertools import permutations
+
+    n, m = map(int, input().split())
+    num_list = [str(i) for i in range(1, n+1)]
+    for i in permutations(num_list, m):
+        print(' '.join(i))
+    ```
