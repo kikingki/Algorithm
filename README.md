@@ -138,3 +138,15 @@
     for i in permutations(num_list, m):
         print(' '.join(i))
     ```
+  + #### [BOJ 15650](../master/15650번.py)
+    자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 문제. 이 문제 역시 백트래킹 알고리즘을 이용해 풀었다. 15649번 문제와의 차이점은 고른 수열이 오름차순이어야 한다는 조건이 추가되었기 때문에 순열이 아닌 조합 문제이다. 즉, 탐색의 시작점인 visited[i]를 제외하고 그 이후의 값부터 False로 변경해주면 풀리는 문제이다.
+    + 이 문제도 파이썬의 내장함수 combinations를 사용해 조합을 찾는 방법이 있다.
+     ```python
+    from itertools import combinations
+
+    n, m = map(int, input().split())
+    num_list = [str(i) for i in range(1, n+1)]
+
+    for i in combinations(num_list, m):
+        print(' '.join(i))
+    ```
