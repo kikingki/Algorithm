@@ -9,7 +9,8 @@ result = []
 # 가능 여부
 temp = True
 
-for i in range(n):
+# 반복에서 i를 사용하지 않기 때문에 _로 바꿔줌.
+for _ in range(n):
     num = int(input())
 
     while count <= num:
