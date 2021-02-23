@@ -28,12 +28,3 @@ def dfs(depth):
             visited[j] = False
 
 dfs(0)
-
-# # 파이썬의 내장함수 combinations를 사용해 조합을 찾는 방법
-from itertools import combinations
-
-n, m = map(int, input().split())
-num_list = [str(i) for i in range(1, n+1)]
-
-for i in combinations(num_list, m):
-    print(' '.join(i))
