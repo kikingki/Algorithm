@@ -16,10 +16,11 @@ def dfs(depth):
     # 깊이가 m과 동일하면
     if depth == m:
         # 리스트를 문자열로 변환해 출력 후 함수 종료
-        print(' '.join(map(str, num_list)))
+        # '*array'를 사용하면 문자열로 변환하지 않아도 띄어쓰기로 구분해줌.
+        print(*num_list)
         return
 
-    for i in range(1, n):
+    for i in range(n):
         if visited[i]:      # visited가 true일 경우 중복
             continue
 

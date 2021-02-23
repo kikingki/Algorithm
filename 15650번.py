@@ -10,7 +10,7 @@ def dfs(depth):
     # 깊이가 m과 동일하면
     if depth == m:
         # 리스트를 문자열로 변환해 출력 후 함수 종료
-        print(' '.join(map(str, num_list)))
+        print(*num_list)
         return
 
     for i in range(n):
