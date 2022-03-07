@@ -180,3 +180,15 @@
 #### 21.8.6
   + #### [BOJ 9012](../master/9012번.py)
     입력받은 괄호문자열이 VPS인지 판단하는 문제. 스택(Stack)을 이용해서 풀었다. 각 괄호 문자열에서 for문으로 문자를 하나씩 검사한다. 왼쪽 괄호이면 스택에 push하고, 오른쪽 괄호는 pop을 수행해 짝을 맞춘다. 문자가 오른쪽 괄호인데 스택이 비어있는 상태이면 VPS가 아닌 문자열이므로 스택에 문자를 추가한 후 반복을 종료한다. 반복을 끝내고 stack이 empty 상태면 VPS, 아니면 VPS가 아닌 문자열이다.
+
+#### 22.3.8
+  + #### [프로그래머스 완주하지 못한 선수](../master/완주하지못한선수.py)
+    마라톤에 참여한 선수들의 이름이 담긴 배열과 완주한 선수들의 이름이 담긴 배열이 주어질 때, 완주하지 못한 선수의 이름을 return하는 문제. 동명이인을 고려하려면 딕셔너리 자료형을 사용해야 한다. 선수의 이름을 key 값으로 하고, 해당 선수의 value 값을 1씩 증가시켰다. 선수가 완주를 했을 경우에 1을 감소시키면 value 값이 0이 아닌 선수가 완주하지 못한 선수이다.
+    + 다른 사람의 풀이를 참고하여 collections 모듈의 Counter() 함수를 알게 되었다. Counter() 함수는 데이터 값의 개수가 딕셔너리 형태로 반환되고, Counter 객체 간 산술연산도 가능하여 훨씬 간결한 코드 작성이 가능했다.
+    ```python
+        from collections import Counter
+
+        def solution(participant, completion):
+            answer = Counter(participant) - Counter(completion)
+            return list(answer.keys())[0]
+    ```
