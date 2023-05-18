@@ -1,4 +1,7 @@
 # Algorithm🌱
+
+#### [2023년도부터 JAVA Algorithm 공부를 시작했습니다.](https://github.com/kikingki/Algorithm-with-java)
+
 #### 20.12.26
   + ##### [BOJ 1259](../master/1259번.py)
     입력된 수가 팰린드롬 수인지 판단하는 문제. 
